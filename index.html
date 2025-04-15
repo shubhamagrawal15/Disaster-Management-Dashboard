@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Disaster Management Dashboard</h1>
+</header>
+
+<div class="dashboard-container">
+
+    <div class="card">
+        <h2>Weather Updates</h2>
+        <input type="text" id="weather-location" placeholder="Enter Location">
+        <button onclick="fetchWeather()">Get Weather</button>
+        <div id="weather-info"></div>
+    </div>
+    
+    
+    <!-- Disaster Alerts Section -->
+    <div class="card">
+        <h2>Disaster Alerts</h2>
+        <input type="text" id="alert-location" placeholder="Enter Location">
+        <button onclick="fetchDisasterAlerts()">Get Alerts</button>
+        <ul id="disaster-alerts"></ul>
+    </div>
+
+    <!-- Missing Persons Section -->
+    <div class="card">
+        <h2>Missing Persons</h2>
+        <input type="text" id="missing-location" placeholder="Enter Location (optional)">
+        <button onclick="fetchMissingPersons()">Show Missing Persons</button>
+        <div id="missing-persons-list"></div>
+        
+        <h3>Report a Missing Person</h3>
+        <input type="text" id="person-name" placeholder="Name">
+        <input type="text" id="person-location" placeholder="Location">
+        <button onclick="reportMissingPerson()">Report</button>
+        <button onclick="sendTelegramAlert()">Notify Authorities via Telegram</button>
+    </div>
+
+    <!-- Community Updates Section -->
+    <div class="card">
+        <h2>Community Updates</h2>
+        <input type="text" id="update-text" placeholder="Enter Community Update">
+        <button onclick="postCommunityUpdate()">Post</button>
+        <ul id="community-updates"></ul>
+    </div>
+
+    <div class="card">
+        <h2>Emergency Contacts</h2>
+        <input type="text" id="contact-name" placeholder="Name">
+        <input type="text" id="contact-number" placeholder="Phone Number">
+        <input type="text" id="contact-address" placeholder="Address" textObject.required =false
+        >
+        <input type="text" id="contact-agency" placeholder="Agency/Expertise" textObject.required =false
+        >
+        <button onclick="addEmergencyContact()">Add Contact</button>
+    
+        <h3>Search Contact</h3>
+        <input type="text" id="search-contact" placeholder="Search by Name or Agency">
+        <button onclick="fetchEmergencyContacts()">Search</button>
+    
+        <ul id="emergency-contacts"></ul>
+    </div>
+    
+
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
